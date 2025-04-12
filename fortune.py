@@ -1,3 +1,5 @@
+import random
+
 def get_fortune(mood):
     # Dictionary of fortunes based on mood
     fortunes = {
@@ -6,12 +8,13 @@ def get_fortune(mood):
         "sad": ["✨ Don't worry, better days are ahead. The sun will shine again.✨",
                "✨ This feeling is temporary. Joy is on its way to you.✨"],
         "neutral": ["✨ Interesting opportunities are coming your way soon.✨",
-                  "✨ A surprise awaits you before the week ends.✨"]
+                  "✨ A surprise awaits you before the week ends.✨"],
+        "stressed": ["✨ Take a deep breath. This stress will lead to growth.✨",
+                    "✨ The pressure you feel now is creating a diamond within you.✨"]
     }
     
     # Return a fortune based on the mood
     if mood in fortunes:
-        import random
         return random.choice(fortunes[mood])
     else:
         return "✨ I cannot read your fortune with that mood. Try happy, sad, or neutral.✨"
@@ -19,9 +22,9 @@ def get_fortune(mood):
 def main():
     # Display welcome message with your name and admission number
     print("🔮 Welcome to Pradip's Fortune Teller (21JE0664)🔮")
-    
+         
     # Get user's mood
-    mood = input("How are you feeling today? (happy/sad/neutral): ").lower()
+    mood = input("How are you feeling today? (happy/sad/neutral/stressed): ").lower()
     
     # Display fortune
     print(get_fortune(mood))
